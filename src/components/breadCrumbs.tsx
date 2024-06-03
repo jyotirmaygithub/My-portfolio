@@ -7,30 +7,26 @@ export default function App() {
     <div className="flex justify-center my-10">
       <Breadcrumbs
         size="sm"
-        className="bg-slate-900 p-4 rounded border-solid border-white border"
+        className="bg-slate-900 p-4 px-10 rounded border-solid border-white border "
         classNames={{
           list: "gap-2",
         }}
         itemClasses={{
           separator: "hidden",
           item: "text-gray-500 hover:text-white",
-          currentItem: "font-bold text-white",
         }}
       >
-        <BreadcrumbItem key="home" isCurrent={true}>
+        <BreadcrumbItem key="home">
           Home
         </BreadcrumbItem>
-        <BreadcrumbItem key="music">
-          Music
+        <BreadcrumbItem key="education">
+          Education
         </BreadcrumbItem>
-        <BreadcrumbItem key="artist">
-          Artist
+        <BreadcrumbItem key="project">
+          Projects
         </BreadcrumbItem>
-        <BreadcrumbItem key="album">
-          Album
-        </BreadcrumbItem>
-        <BreadcrumbItem key="song" isDisabled>
-          Song
+        <BreadcrumbItem key="open-source">
+          Open-Source
         </BreadcrumbItem>
       </Breadcrumbs>
     </div>
