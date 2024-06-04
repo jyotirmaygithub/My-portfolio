@@ -1,16 +1,20 @@
 import React from "react";
-import { GitHub , LinkedIn } from "@mui/icons-material";
+import { GitHub , LinkedIn , Mail} from "@mui/icons-material";
 
 export default function SocialMedia() {
   const data = [
     {
-      url: "https://example.com/link",
+      url: "https://www.linkedin.com/in/jyotirmay-gupta/",
       icon: <LinkedIn />,
     },
     {
-      url: "https://github.com/your-profile",
+      url: "https://github.com/jyotirmaygithub",
       icon: <GitHub />,
     },
+    {
+      url: "mailto:jyotirmay2000gupta@gmail.com",
+      icon: <Mail />,
+    }
   ];
 
   return (
