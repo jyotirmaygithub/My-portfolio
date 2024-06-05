@@ -30,9 +30,9 @@ export default function FullStackSkills() {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto py-8 space-y-8">
-      <h2 className="text-3xl font-bold mb-4">Full Stack Skills</h2>
-      <div className="flex items-center space-x-4 mb-4">
+    <div className="max-w-4xl mx-auto py-8 space-y-8 px-4 sm:px-6 lg:px-8">
+      <h2 className="text-2xl sm:text-3xl font-bold mb-4">Full Stack Skills</h2>
+      <div className="flex flex-wrap justify-center gap-4 mb-4">
         {skills.map((skill, index) => (
           <div key={index} className={`w-12 h-12 ${skill.bg || ""}`}>
             <Image src={skill.src} alt={skill.alt} width={48} height={48} />
@@ -43,17 +43,17 @@ export default function FullStackSkills() {
         {skillDetails.map((detail, index) => (
           <div className="flex items-start" key={index}>
             <CheckCircleIcon className="text-green-500 mr-2" />
-            <h3 className="text-xl font-semibold">{detail}</h3>
+            <h3 className="text-lg sm:text-xl font-semibold">{detail}</h3>
           </div>
         ))}
       </div>
       <div className="mt-8">
-        <h3 className="text-2xl font-bold mb-4">Tools and Technologies</h3>
+        <h3 className="text-xl sm:text-2xl font-bold mb-4">Tools and Technologies</h3>
         <div className="space-y-2">
           {toolsAndTech.map((tool, index) => (
             <div className="flex items-start" key={index}>
               <CheckCircleIcon className="text-blue-500 mr-2" />
-              <h3 className="text-xl font-semibold">{tool}</h3>
+              <h3 className="text-lg sm:text-xl font-semibold">{tool}</h3>
             </div>
           ))}
         </div>

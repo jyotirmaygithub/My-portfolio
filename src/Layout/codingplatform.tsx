@@ -1,12 +1,12 @@
-import React from 'react'
-import Codechef from "@/components/images/codechef"
-import Leetcode from "@/components/images/leetcode"
+import React from "react";
+import Codechef from "@/components/images/codechef";
+import Leetcode from "@/components/images/leetcode";
 
-export default function codingplatform() {
+export default function CodingPlatform() {
   return (
-    <div className='flex flex-wrap space-x-5'>
-      <Codechef/>
-      <Leetcode/>
+    <div className="flex flex-wrap justify-center my-5 gap-4">
+      <Leetcode />
+      <Codechef />
     </div>
-  )
+  );
 }

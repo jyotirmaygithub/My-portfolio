@@ -1,4 +1,3 @@
-import { Image } from "@nextui-org/react";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 
@@ -18,11 +17,11 @@ export default function Project({
   liveDemoUrl?: string;
 }) {
   return (
-    <section className="flex flex-wrap my-20 mx-20 justify-center items-center space-x-5 ">
-      <div className="flex flex-col" >
+    <div className="flex-col my-20 justify-center items-center space-x-5 ">
+      <div className="flex flex-col m-4" >
         <h1 className="text-2xl font-bold">{projectType}</h1>
         <h2 className="text-xl font-semibold">{title}</h2>
-        <div className="bg-white p-6 rounded-lg shadow-md">
+        <div className="bg-white p-4 rounded shadow-md">
           <p className=" text-black overflow-hidden">{description}</p>
         </div>
 
@@ -32,7 +31,7 @@ export default function Project({
           ))}
         </ul>
 
-        <div className="mt-4 flex items-center space-x-4">
+        <div className="mt-4 flex items-center gap-2">
           <a
             href={githubUrl}
             target="_blank"
@@ -51,6 +50,6 @@ export default function Project({
           </a>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
