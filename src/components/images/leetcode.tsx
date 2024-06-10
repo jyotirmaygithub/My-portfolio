@@ -4,7 +4,7 @@ import { Image, Tooltip } from "@nextui-org/react";
 export default function App() {
   return (
     <Tooltip content="LeetCode" className="bg-blue-800 rounded">
-      <a href="https://leetcode.com" target="_blank" rel="noopener noreferrer">
+      <a href="https://leetcode.com/u/hustle-coder/" target="_blank" rel="noopener noreferrer">
         <Image
           className="rounded"
           width={50}  // Adjust width as needed
