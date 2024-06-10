@@ -1,8 +1,11 @@
-"use client"
+"use client";
 import React from "react";
 import { Breadcrumbs, BreadcrumbItem } from "@nextui-org/react";
+import { useRouter } from "next/navigation";
 
 export default function App() {
+  const router = useRouter();
+
   return (
     <div className="flex justify-center my-10">
       <Breadcrumbs
@@ -13,19 +16,31 @@ export default function App() {
         }}
         itemClasses={{
           separator: "hidden",
-          item: "text-gray-500 hover:text-white",
+          item: "text-gray-500 hover:text-white cursor-pointer",
         }}
       >
-        <BreadcrumbItem key="home">
+        <BreadcrumbItem
+          key="home"
+          onClick={() => router.push('/')}
+        >
           Home
         </BreadcrumbItem>
-        <BreadcrumbItem key="education">
+        <BreadcrumbItem
+          key="education"
+          onClick={() => router.push('/education')}
+        >
           Education
         </BreadcrumbItem>
-        <BreadcrumbItem key="project">
+        <BreadcrumbItem
+          key="project"
+          onClick={() => router.push('/project')}
+        >
           Projects
         </BreadcrumbItem>
-        <BreadcrumbItem key="open-source">
+        <BreadcrumbItem
+          key="open-source"
+          onClick={() => router.push('/open-source')}
+        >
           Open-Source
         </BreadcrumbItem>
       </Breadcrumbs>

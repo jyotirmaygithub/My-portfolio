@@ -25,19 +25,19 @@ const anaflous: Engineer = {
 // Home component
 export default function Intro() {
   return (
-    <div className="flex flex-col space-y-5 m-4 mx-20">
-      <h6>Hi, my name is</h6>
+    <div className="flex flex-col space-y-5 m-4 sm:m-8 md:m-20">
+      <h6 className="text-lg sm:text-xl md:text-2xl">Hi, my name is</h6>
       <div className="space-y-5">
-        <h1 className="text-6xl font-bold">{anaflous.name}</h1>
-        <h1 className="text-6xl font-bold">{anaflous.quote}</h1>
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold">{anaflous.name}</h1>
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold">{anaflous.quote}</h1>
       </div>
-      <p className="my-10">{anaflous.description}</p>
+      <p className="my-4 sm:my-6 md:my-10 text-base sm:text-lg md:text-xl">{anaflous.description}</p>
       <div>
         <CustomButton
           title="Check out my resume"
           icon={<ArrowForward />}
           position="end"
-          href="https://chatgpt.com/c/c338b375-811a-49ec-88b6-be1041ec7c36"
+          href="https://drive.google.com/file/d/1xIRtvWVyQIJkVOfU4p-4pxYZ_YZWg4ex/view"
         />
       </div>
     </div>
