@@ -3,12 +3,12 @@ import ProjectSection from '@/Layout/project';
 const projects = [
   {
     projectType : "Full Stack Project",
-    title: 'Task management system',
-    description: 'Built with React, Express, Node.js, and MongoDB Atlas. The frontend, deployed on Netlify, uses Material UI and Tailwind CSS. It features Google OAuth and JWT for user authentication. Users can create tasks, view all tasks, assign themselves to tasks, and access routes for archived tasks, tasks they have created, and tasks assigned to them.',
-    tools: ['React.js', 'MongoDB', 'Node.js','Endpoints','OAuth'],
-    githubUrl: 'https://github.com/jyotirmaygithub/Task-Management-System',
-    liveDemoUrl: 'https://for-tasks-management.netlify.app/',
-    screenshotSrc: '/Images/task.png',
+    title: 'ComfortQuest',
+    description: 'Empowering users to browse and register hotels, securely upload images, and efficiently manage data with advanced CRUD operations in MongoDB Implemented a robust cancellation policy where users can cancel hotel bookings with a 40% charge, optimizing revenue management and user satisfaction. Built a seamless hotel booking system with a reservation visualization route.Designed a user dashboard for profile viewing and updates, utilizing Node.js and Cloudinary for efficient data handling and storage.Ensure all user inputs meet predefined criteria to maintain data accuracy andintegrity.',
+    tools: ['React.js','MongoDB','Node.js','Cloudinary','Material-UI',
+     ],
+    githubUrl: 'https://github.com/jyotirmaygithub/Hotels',
+    screenshotSrc: '/Images/hotels .png',
   },
   {
     projectType : "Full Stack Project",
@@ -21,12 +21,12 @@ const projects = [
   },
   {
     projectType : "Full Stack Project",
-    title: 'Hotels',
-    description: 'The project utilizes full-stack technologies: React for frontend, Node.js with Express.js for backend, and MongoDB for databases. It features user authentication through Google OAuth 2.0 and enables hotel exploration, reservations, and promotion applications within personalized profiles.',
-    tools: ['React.js','MongoDB','Node.js','Cloudinary','Material-UI',
-     ],
-    githubUrl: 'https://github.com/jyotirmaygithub/Hotels',
-    screenshotSrc: '/Images/hotel.png',
+    title: 'Task management system',
+    description: 'Built with React, Express, Node.js, and MongoDB Atlas. The frontend, deployed on Netlify, uses Material UI and Tailwind CSS. It features Google OAuth and JWT for user authentication. Users can create tasks, view all tasks, assign themselves to tasks, and access routes for archived tasks, tasks they have created, and tasks assigned to them.',
+    tools: ['React.js', 'MongoDB', 'Node.js','Endpoints','OAuth'],
+    githubUrl: 'https://github.com/jyotirmaygithub/Task-Management-System',
+    liveDemoUrl: 'https://for-tasks-management.netlify.app/',
+    screenshotSrc: '/Images/task.png',
   },
   {
     projectType : "Frontend Project",
@@ -51,7 +51,7 @@ const projects = [
 
 const ProjectsPage: React.FC = () => {
   return (
-    <div>
+    <div className='flex justify-center items-center flex-wrap lg:justify-between m-2 lg:m-24'>
       {projects.map((project, index) => (
         <ProjectSection key={index} {...project} />
       ))}
