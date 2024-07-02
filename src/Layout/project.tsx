@@ -20,11 +20,11 @@ export default function Project({
   screenshotSrc: string;
 }) {
   return (
-    <section className="flex flex-col m-4 md:flex-row my-20 mx-10 md:mx-20 space-y-5 md:space-x-5 ">
-      <div className="md:w-1/2">
+    <section className="flex flex-col md:flex-row items-center justify-center my-10 mx-5 md:mx-10 space-y-5 md:space-x-5">
+      <div className="w-full md:w-1/2">
         <h1 className="text-2xl font-bold">{projectType}</h1>
         <h2 className="text-xl font-semibold">{title}</h2>
-        <div className="bg-white p-4 rounded shadow-md">
+        <div className="bg-white p-4 rounded shadow-md mt-4">
           <p className="text-black overflow-hidden">{description}</p>
         </div>
 
@@ -42,22 +42,22 @@ export default function Project({
             className="text-blue-600 flex items-center space-x-2"
           >
             <GitHubIcon />
+            <span>GitHub</span>
           </Link>
           {liveDemoUrl && (
-            <Link href={liveDemoUrl}>
-              <div className="text-blue-600 flex items-center space-x-2">
-                <ArrowCircleRightOutlinedIcon />
-              </div>
+            <Link href={liveDemoUrl} className="text-blue-600 flex items-center space-x-2">
+              <ArrowCircleRightOutlinedIcon />
+              <span>Demo</span>
             </Link>
           )}
         </div>
       </div>
-      <div className="md:w-1/2 flexr">
+      <div className="w-full flex justify-center md:w-1/2">
         <Link href={liveDemoUrl ? liveDemoUrl : githubUrl}>
           <Image
             className="rounded cursor-pointer"
-            width={500} // Set a larger fixed width for the image
-            height={400} // Set a larger fixed height for the image
+            width={500} // Set a fixed width for the image
+            height={400} // Set a fixed height for the image
             alt="Project Screenshot"
             src={screenshotSrc}
           />
