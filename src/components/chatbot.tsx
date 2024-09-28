@@ -52,7 +52,7 @@ const ContactModal: React.FC = () => {
           <div className="space-y-5">
             <h1 className="font-bold text-3xl">Contact with me</h1>
             <p className="text-sm">
-              If you have any questions or concerns, please don't hesitate to
+              If you have any questions or concerns, please dont hesitate to
               contact me. I am open to any work opportunities that align with my
               skills and interests.
             </p>
