@@ -1,68 +1,120 @@
-import { Image, Link } from "@nextui-org/react";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+"use client";
+import { Link } from "@nextui-org/react";
+import { Image } from "@nextui-org/react";
+import { projects } from "../Data/projects";
+import { useState, useEffect } from "react";
+import gsap from "gsap";
 
-export default function Project({
-  projectType,
-  title,
-  description,
-  tools,
-  githubUrl,
-  liveDemoUrl,
-  screenshotSrc,
-}: {
-  projectType: string;
-  title: string;
-  description: string;
-  tools: string[];
-  githubUrl: string;
-  liveDemoUrl?: string;
-  screenshotSrc: string;
-}) {
+export default function Project() {
+  const [index, setIndex] = useState(0);
+  const {
+    title,
+    desc,
+    subdesc,
+    logo,
+    logoStyle,
+    tags,
+    githubUrl,
+    screenshotSrc,
+    liveDemoUrl,
+  } = projects[index];
+
+  const projectCount = projects.length;
+
+  const handleNavigation = (direction:String) => {
+    setIndex((prevIndex) => {
+      if (direction === 'previous') {
+        return prevIndex === 0 ? projectCount - 1 : prevIndex - 1;
+      } else {
+        return prevIndex === projectCount - 1 ? 0 : prevIndex + 1;
+      }
+    });
+  };
+
+  useEffect(() => {
+    gsap.fromTo(".animatedText", { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.2, ease: "power2.inOut" });
+    gsap.fromTo(".animatedLogo", { scale: 0 }, { scale: 1, duration: 1, ease: "power2.inOut" });
+  }, [index]);
+
   return (
-    <section className="flex flex-col md:flex-row items-center justify-center my-10 mx-5 md:mx-10 space-y-5 md:space-x-5">
-      <div className="w-full md:w-1/2">
-        <h1 className="text-2xl font-bold">{projectType}</h1>
-        <h2 className="text-xl font-semibold">{title}</h2>
-        <div className="bg-white p-4 rounded shadow-md mt-4">
-          <p className="text-black overflow-hidden">{description}</p>
-        </div>
-
-        <ul className="flex flex-wrap text-white list-none mt-4">
-          {tools.map((tool, index) => (
-            <li key={index} className="bg-gray-200 px-3 py-1 rounded my-1 mr-2">
-              {tool}
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-4 flex items-center gap-2">
-          <Link
-            href={githubUrl}
-            className="text-blue-600 flex items-center space-x-2"
+    <>
+      <section className="p-4 border">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div
+            className="flex flex-col justify-center bg-cover bg-center "
+            style={{ backgroundImage: "url(/images/spotlight2.png)" }}
           >
-            <GitHubIcon />
-            <span>GitHub</span>
-          </Link>
-          {liveDemoUrl && (
-            <Link href={liveDemoUrl} className="text-blue-600 flex items-center space-x-2">
-              <ArrowCircleRightOutlinedIcon />
-              <span>Demo</span>
-            </Link>
-          )}
+            <div className="p-4 space-y-8">
+              <div className="animatedLogo" style={logoStyle}>{logo}</div>
+              <h1 className="text-2xl font-bold mb-2 animatedText">{title}</h1>
+              <p className="text-gray-500 animatedText">{desc}</p>
+              <p className="text-gray-500 animatedText">{subdesc}</p>
+              <div className="flex my-14 justify-between items-center">
+                <div className="flex justify-center gap-4">
+                  {tags.map((tag) => (
+                    <Image
+                      key={tag.id}
+                      width={40}
+                      height={40}
+                      src={tag.path}
+                      alt=""
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className="">
+                <Link
+                  className="flex justify-end items-center gap-2 cursor-pointer"
+                  href={liveDemoUrl || githubUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <p className="text-white animatedText">Check Live Site</p>
+                  <Image
+                    src="/assets/arrow-up.png"
+                    width={15}
+                    height={15}
+                    alt="arrow"
+                  />
+                </Link>
+              </div>
+              <div
+                className="flex justify-between items-center mt-7 w-full"
+                style={{ justifyContent: "space-between" }}
+              >
+                <button onClick={() => handleNavigation('previous')}>
+                  <Image
+                    height={25}
+                    width={25}
+                    src="/assets/left-arrow.png"
+                    alt="left arrow"
+                  />
+                </button>
+
+                <button onClick={() => handleNavigation('next')}>
+                  <Image
+                    height={25}
+                    width={25}
+                    src="/assets/right-arrow.png"
+                    alt="right arrow"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-center items-center">
+            {/* <Suspense fallback={<ImageLoader />}> */}
+              <Image
+                width={600}
+                height={600}
+                src={screenshotSrc}
+                alt="Screenshot"
+                className="animatedText"
+              />
+            {/* </Suspense> */}
+          </div>
         </div>
-      </div>
-      <div className="w-full flex justify-center md:w-1/2">
-        <Link href={liveDemoUrl ? liveDemoUrl : githubUrl}>
-          <Image
-            className="rounded cursor-pointer"
-            width={500} // Set a fixed width for the image
-            height={400} // Set a fixed height for the image
-            alt="Project Screenshot"
-            src={screenshotSrc}
-          />
-        </Link>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
