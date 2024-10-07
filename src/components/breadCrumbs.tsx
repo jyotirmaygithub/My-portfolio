@@ -19,27 +19,27 @@ export default function App() {
           item: "text-gray-500 hover:text-white cursor-pointer",
         }}
       >
-        <BreadcrumbItem
-          key="home"
-          onClick={() => router.push('/')}
-        >
+        <BreadcrumbItem key="home" onClick={() => router.push("/")}>
           Home
         </BreadcrumbItem>
         <BreadcrumbItem
+          key="experience"
+          onClick={() => router.push("/experience")}
+        >
+          Experience
+        </BreadcrumbItem>
+        <BreadcrumbItem key="project" onClick={() => router.push("/project")}>
+          Projects
+        </BreadcrumbItem>
+        <BreadcrumbItem
           key="education"
-          onClick={() => router.push('/education')}
+          onClick={() => router.push("/education")}
         >
           Education
         </BreadcrumbItem>
         <BreadcrumbItem
-          key="project"
-          onClick={() => router.push('/project')}
-        >
-          Projects
-        </BreadcrumbItem>
-        <BreadcrumbItem
           key="open-source"
-          onClick={() => router.push('/open-source')}
+          onClick={() => router.push("/open-source")}
         >
           Open-Source
         </BreadcrumbItem>

@@ -1,55 +1,91 @@
-import GitHubIcon from "@mui/icons-material/GitHub";
-import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+'use client'
+import { useEffect } from "react";
+import { Link } from "@nextui-org/react";
+import { Image } from "@nextui-org/react";
+import gsap from "gsap";
+
+// Define the Tag interface outside of the Project component
+interface Tag {
+  id: number;
+  name: string;
+  path: string;
+}
 
 export default function Project({
-  projectType,
   title,
-  description,
-  tools,
+  desc,
+  subdesc,
+  tags,
   githubUrl,
   liveDemoUrl,
 }: {
-  projectType?: string;
   title: string;
-  description: string;
-  tools: string[];
+  desc: string;
+  subdesc: string;
+  tags: Tag[];
   githubUrl: string;
   liveDemoUrl?: string;
 }) {
+  useEffect(() => {
+    // GSAP animation for the title, description, and tags
+    gsap.fromTo(
+      ".animatedText",
+      { opacity: 0, y: -20 }, // Initial state
+      {
+        opacity: 1,
+        y: 0, // End state
+        duration: 1,
+        stagger: 0.2, // Staggering effect for multiple elements
+        ease: "power2.inOut",
+      }
+    );
+  }, []); // Empty dependency array to run on mount only
+
   return (
-    <div className="flex-col my-20 justify-center items-center space-x-5 ">
-      <div className="flex flex-col m-4" >
-        <h1 className="text-2xl font-bold">{projectType}</h1>
-        <h2 className="text-xl font-semibold">{title}</h2>
-        <div className="bg-white p-4 rounded shadow-md">
-          <p className=" text-black overflow-hidden">{description}</p>
+    <div className="flex justify-center items-center flex-wrap lg:justify-between m-2">
+      <section className="p-4 border">
+        <div
+          className="flex flex-col justify-center bg-cover bg-center"
+          style={{ backgroundImage: "url(/assets/spotlight1.png)" }}
+        >
+          <div className="p-4 space-y-8">
+            <h1 className="text-2xl font-bold mb-2 animatedText">{title}</h1>
+            <p className="text-gray-500 animatedText">{desc}</p>
+            <p className="text-gray-500 animatedText">{subdesc}</p>
+            <div className="flex my-14 justify-between items-center">
+              <div className="flex justify-center gap-4">
+                {tags.map((tag) => (
+                  <Image
+                    key={tag.id}
+                    width={40}
+                    height={40}
+                    src={tag.path}
+                    alt={tag.name}
+                    className="animatedText" // Apply GSAP class to tags
+                  />
+                ))}
+              </div>
+            </div>
+            <div>
+              <Link
+                className="flex justify-end items-center gap-2 cursor-pointer no-outline"
+                href={liveDemoUrl || githubUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <p className="text-white animatedText">Check Live Site</p>
+                <Image
+                  src="/assets/arrow-up.png"
+                  width={15}
+                  height={15}
+                  alt="arrow"
+                  className="animatedText"
+                />
+              </Link>
+            </div>
+          </div>
         </div>
-
-        <ul className="flex text-white list-none space-x-5 mt-4">
-          {tools.map((tool, index) => (
-            <li key={index} className="bg-gray-200 px-2 py-1 rounded">{tool}</li>
-          ))}
-        </ul>
-
-        <div className="mt-4 flex items-center gap-2">
-          <a
-            href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 flex items-center space-x-2"
-          >
-            <GitHubIcon />
-          </a>
-          <a
-            href={liveDemoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 flex items-center space-x-2"
-          >
-            <ArrowCircleRightOutlinedIcon />
-          </a>
-        </div>
-      </div>
+      </section>
     </div>
   );
 }

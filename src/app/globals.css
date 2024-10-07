@@ -16,9 +16,8 @@ body {
     text-decoration: none;
   }
   
-  a:hover {
-    text-decoration: underline;
+  .no-outline:focus {
+    outline: none; /* Remove the default focus outline */
   }
   
-  /* Add more styles as needed */
   
