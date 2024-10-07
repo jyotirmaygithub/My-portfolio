@@ -1,6 +1,6 @@
 import React from "react";
 import { educationData } from "../../Data/projects";
-import Learning from "@/components/education/learning";
+import Learning from "@/components/education/Learning";
 
 const EducationPage: React.FC = () => {
   return (
