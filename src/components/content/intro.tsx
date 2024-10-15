@@ -26,29 +26,29 @@ const Jyotirmay: Engineer = {
 
 // Home component
 export default function Intro() {
-  useEffect(() => {
-    // GSAP animation for the title, description, and tags
-    gsap.fromTo(
-      ".animatedText",
-      { opacity: 0, y: -20 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 2,
-        stagger: 0.5,
-        ease: "power2.inOut",
-      }
-    );
-  }, []);
+  // useEffect(() => {
+  //   // GSAP animation for the title, description, and tags
+  //   gsap.fromTo(
+  //     ".",
+  //     { opacity: 0, y: -20 },
+  //     {
+  //       opacity: 1,
+  //       y: 0,
+  //       duration: 2,
+  //       stagger: 0.5,
+  //       ease: "power2.inOut",
+  //     }
+  //   );
+  // }, []);
 
   return (
     <div className="flex flex-col space-y-5 m-4 sm:m-8 md:m-20">
-      <h6 className="text-lg sm:text-xl md:text-2xl animatedText">Hi, my name is</h6>
+      <h6 className="text-lg sm:text-xl md:text-2xl ">Hi, my name is</h6>
       <div className="space-y-5">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold animatedText">{Jyotirmay.name}</h1>
-        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold animatedText">{Jyotirmay.quote}</h1>
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold ">{Jyotirmay.name}</h1>
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold ">{Jyotirmay.quote}</h1>
       </div>
-      <p className="my-4 sm:my-6 md:my-10 text-base sm:text-lg md:text-xl animatedText">{Jyotirmay.description}</p>
+      <p className="text-gray-500 my-4 sm:my-6 md:my-10 text-base sm:text-lg md:text-xl ">{Jyotirmay.description}</p>
       <div className="">
         <CustomButton
           title="Check out my resume"

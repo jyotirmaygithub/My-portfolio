@@ -29,17 +29,17 @@ export default function Learning({
   }, []); // Empty dependency array to run on mount only
 
   return (
-    <div className="border border-white p-4 md:p-5">
-      <h1 className="text-white mb-2.5 text-xl sm:text-2xl md:text-3xl animatedText">
+    <div className="border border-white p-4 flex flex-col space-y-10">
+      <h1 className="text-white text-xl sm:text-2xl md:text-3xl animatedText">
         {title}
       </h1>
-      <h2 className="text-gray-300 mb-2 text-lg sm:text-xl md:text-2xl animatedText">
+      <h2 className="text-gray-300 text-lg sm:text-xl md:text-2xl animatedText">
         {degree}
       </h2>
-      <h3 className="animatedText text-gray-500 mb-5 text-base sm:text-lg md:text-xl">
+      <h3 className="animatedText text-gray-500 text-base sm:text-lg md:text-xl">
         {graduation}
       </h3>
-      <div className="animatedText text-gray-500 mb-5 text-base sm:text-lg md:text-xl">
+      <div className="animatedText text-gray-500 text-base" style={{marginTop: "30px"}}>
         <strong>Key Learnings:</strong>
         <br />
         {keyLearnings.map((learning, index) => (
