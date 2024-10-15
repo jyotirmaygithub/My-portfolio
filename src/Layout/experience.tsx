@@ -22,6 +22,7 @@ export default function Project({
   duration: string;
   responsibilities: string;
 }) {
+  
   useEffect(() => {
     // GSAP animation for the title, description, and tags
     gsap.fromTo(
@@ -38,7 +39,7 @@ export default function Project({
   }, []); // Empty dependency array to run on mount only
 
   return (
-    <div className="flex justify-center items-center flex-wrap lg:justify-between m-2">
+    <div className="flex justify-center items-center flex-wrap lg:justify-between">
       <section className="p-4 border">
         <div
           className="flex flex-col justify-center bg-cover bg-center"

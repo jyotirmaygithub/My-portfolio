@@ -247,3 +247,58 @@ export const experienceData = [
     ],
   },
 ];
+
+// data.js
+
+export const aboutMeText = {
+  heading: "About Me",
+  paragraphs: [
+    "I am currently pursuing a Bachelors in Computer Applications at Lovely Professional University. While I have a solid grasp of coding and web development, particularly in Full Stack technologies like MERN (MongoDB, Express.js, React.js, Node.js), I am eager to explore beyond these boundaries.",
+    "In addition to my technical skills, I have a deep passion for swimming and reading. To broaden my horizons, I have actively engaged in two societies, OASIS and DRAGCON, where I am dedicated to improving my communication abilities. Alongside this, I allocate time to immerse myself in books across various disciplines such as sociology, history, economics, psychology, and philosophy. These readings not only enhance my understanding of the world and myself but also cultivate critical thinking and creativity."
+  ]
+};
+
+// skillsData.js
+
+export const skills = [
+  { src: "https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-html-5-512.png", alt: "HTML" },
+  { src: "https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png", alt: "CSS" },
+  { src: "https://cdn2.iconfinder.com/data/icons/designer-skills/128/code-programming-javascript-software-develop-command-language-512.png", alt: "JavaScript" },
+  { src: "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png", alt: "React" },
+  { src: "https://cdn3.iconfinder.com/data/icons/teenyicons-solid-vol-2/15/nextjs-64.png", alt: "Next.js", bg: "bg-white" },
+  { src: "https://cdn.iconscout.com/icon/free/png-256/typescript-1174965.png", alt: "TypeScript" },
+  { src: "https://cdn4.iconfinder.com/data/icons/logos-3/512/mongodb-2-512.png", alt: "MongoDB", bg: "bg-white" },
+  { src: "https://cdn4.iconfinder.com/data/icons/logos-3/456/nodejs-new-pantone-black-512.png", alt: "Node.js", bg: "bg-white" },
+  { src: "https://cdn4.iconfinder.com/data/icons/logos-3/181/MySQL-512.png", alt: "MySQL", bg: "bg-white" },
+];
+
+export const skillDetails = [
+  "Proficient in full stack development using the MERN stack (MongoDB, Express.js, React, Node.js).",
+  "Expertise in using Next.js for server-side rendering and TypeScript for static typing.",
+  "Experienced with various databases, including MongoDB, PostgreSQL, and MySQL.",
+  "Skilled in leveraging cloud services such as AWS and GCP.",
+  "Well-versed in fundamental web technologies like HTML, CSS, and JavaScript.",
+];
+
+export const toolsAndTech = [
+  "Git & GitHub",
+  "Material UI",
+  "TailwindCSS",
+];
+
+// javaSkillsData.js
+
+export const javaSkills = [
+  "Proficient in Java programming language.",
+  "Solid understanding of Object-Oriented Programming (OOP) principles.",
+  "Knowledge of common data structures like arrays, linked lists, stacks, queues, trees, and graphs.",
+  "Familiarity with basic algorithms such as searching and sorting.",
+];
+
+export const javaToolsAndTech = [
+  "IDEs (IntelliJ IDEA, Eclipse)",
+  "Version Control Systems (Git)",
+];
+
+
+

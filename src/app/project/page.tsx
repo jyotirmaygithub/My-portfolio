@@ -44,7 +44,7 @@ const ProjectsPage: React.FC = () => {
     );
   }, [index]);
   return (
-    <div className="flex justify-center items-center flex-wrap lg:justify-between m-2 lg:m-24">
+    <div className="flex justify-center items-center flex-wrap lg:justify-between m-2 sm:m-5 md:m-10 xl:m-24">
       <section className="p-4 border">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div
