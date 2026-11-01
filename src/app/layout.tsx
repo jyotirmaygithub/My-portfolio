@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import "./globals.css";
-import BreadcrumbItem from "@/components/breadCrumbs";
+import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import ChatbotButton from "@/components/chatbot";
-
-const inter = Inter({ subsets: ["latin"] });
+import ScrollProgress from "@/components/motion/ScrollProgress";
+import SiteBackground from "@/components/site-background";
+import { profile } from "@/Data/portfolio";
 
 export const metadata: Metadata = {
-  title: "Personal portfolio",
-  description: "A vivid description about me and skills ",
+  title: `${profile.name} · ${profile.role}`,
+  description: profile.summary,
 };
 
 export default function RootLayout({
@@ -19,11 +21,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={`${GeistSans.variable} ${GeistMono.variable} ${GeistSans.className} antialiased`}
+      >
+        <SiteBackground />
+        <ScrollProgress />
         <ChatbotButton />
-        <BreadcrumbItem />
-        {children}
-        <Footer />
+        <Navbar />
+        <main className="relative z-[1]">{children}</main>
+        <div className="relative z-[1]">
+          <Footer />
+        </div>
       </body>
     </html>
   );
