@@ -1,26 +1,25 @@
 import React from "react";
-import { GitHub , LinkedIn , Mail} from "@mui/icons-material";
+import { GitHub, LinkedIn, Mail } from "@mui/icons-material";
+import { profile } from "@/Data/portfolio";
 
 export default function SocialMedia() {
   const data = [
-    {
-      url: "https://www.linkedin.com/in/jyotirmay-gupta/",
-      icon: <LinkedIn />,
-    },
-    {
-      url: "https://github.com/jyotirmaygithub",
-      icon: <GitHub />,
-    },
-    {
-      url: "mailto:jyotirmay2000gupta@gmail.com",
-      icon: <Mail />,
-    }
+    { url: profile.linkedin, icon: <LinkedIn fontSize="small" />, label: "LinkedIn" },
+    { url: profile.github, icon: <GitHub fontSize="small" />, label: "GitHub" },
+    { url: `mailto:${profile.email}`, icon: <Mail fontSize="small" />, label: "Email" },
   ];
 
   return (
-    <div>
-      {data.map((item, index) => (
-        <a href={item.url} key={index} target="_blank" rel="noopener noreferrer" style={{ margin: '0 10px' }}>
+    <div className="flex items-center gap-3">
+      {data.map((item) => (
+        <a
+          href={item.url}
+          key={item.label}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={item.label}
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--line)] bg-white/5 text-[var(--ink)] transition hover:-translate-y-0.5 hover:border-accent hover:text-accent"
+        >
           {item.icon}
         </a>
       ))}
