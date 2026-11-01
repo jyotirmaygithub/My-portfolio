@@ -5,9 +5,22 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/Layout/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/Data/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
+      colors: {
+        ink: "#eef3f8",
+        mist: "#070b10",
+        accent: "#2dd4bf",
+        signal: "#fb923c",
+      },
+      fontFamily: {
+        display: ["var(--font-geist-sans)", "sans-serif"],
+        sans: ["var(--font-geist-sans)", "sans-serif"],
+        mono: ["var(--font-geist-mono)", "monospace"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
